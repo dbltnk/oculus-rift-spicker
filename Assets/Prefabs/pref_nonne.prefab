@@ -8,6 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: pref_nonne
   m_TagString: Untagged
@@ -81,6 +83,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Mesh: {fileID: 4300000, guid: 1276ee5dc12774758a9983e8d33988a9, type: 3}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d936786d45519384faf07049811f5393, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
   m_ObjectHideFlags: 1
@@ -93,6 +153,28 @@ Animator:
   m_CullingMode: 1
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a676b7aa125434f89a2f49e4890e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footsteps:
+  - {fileID: 8300000, guid: d936786d45519384faf07049811f5393, type: 3}
+  - {fileID: 8300000, guid: 8f5ee7388feabb64fb907501a1626534, type: 3}
+  - {fileID: 8300000, guid: 751aced80e8fd3140ad2617932339c08, type: 3}
+  - {fileID: 8300000, guid: 318c3a4419a767541899f463e92a192a, type: 3}
+  - {fileID: 8300000, guid: ea0c492b4415cbc479328ce626ee3d78, type: 3}
+  - {fileID: 8300000, guid: 17411db72a2b3be4eacb0b91154052c2, type: 3}
+  - {fileID: 8300000, guid: af0b0f9bc1d9bc146ae07c155d42bfd2, type: 3}
+  - {fileID: 8300000, guid: f9aeb0de7f159734fb7da866869abfed, type: 3}
+  - {fileID: 8300000, guid: 165e7664c22e50e49bd80a88d02942a7, type: 3}
+  - {fileID: 8300000, guid: ae5a4a9658a9bcd48941f43940e94822, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
