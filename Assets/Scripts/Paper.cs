@@ -26,6 +26,16 @@ public class Paper : MonoBehaviour {
 	
 	public bool _isPrefilled;
 	
+	public IEnumerable<GameObject> EnumAllAnswers()
+	{
+		foreach (var a in _answers0) yield return a;
+		foreach (var a in _answers1) yield return a;
+		foreach (var a in _answers2) yield return a;
+		foreach (var a in _answers3) yield return a;
+		foreach (var a in _answers4) yield return a;
+		foreach (var a in _answers5) yield return a;
+	}
+	
 	private void EnableOneRandom(List<GameObject> l, int correctAnswer)
 	{
 		int answer = correctAnswer;
@@ -77,8 +87,32 @@ public class Paper : MonoBehaviour {
 		}
 	}
 	
+	// can return null
+	public GameObject FindNearestCross(Vector3 pos, float distLimit)
+	{
+		GameObject minO = null;
+		float minD = float.MaxValue;
+		
+		foreach (GameObject cross in EnumAllAnswers())
+		{
+			float d = Vector3.Distance(cross.transform.position, pos);
+			if ((minO == null || d < minD) && d < distLimit)
+			{
+				minO = cross;
+				minD = d;
+			}
+		}
+		
+		return minO;
+	}
+	
+	public void Toggle(GameObject cross)
+	{
+		cross.SetActive(!cross.activeSelf);
+	}
+	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 }

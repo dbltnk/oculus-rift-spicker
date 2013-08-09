@@ -6,6 +6,15 @@ public class MousePlane : MonoBehaviour {
 	public float _width;
 	public float _height;
 	
+	public Vector3 MousePos {
+		get {
+			return transform.TransformPoint(_mousePos);
+		}
+	}
+	
+	// from 0 to 1
+	public Vector3 _mousePos;
+	
 	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.magenta;
 		
@@ -21,6 +30,8 @@ public class MousePlane : MonoBehaviour {
 		Gizmos.DrawLine(p1, p2);
 		Gizmos.DrawLine(p2, p3);
 		Gizmos.DrawLine(p3, p0);
+		
+		Gizmos.DrawSphere(MousePos, 0.01f);
 	}
 	
 	// Use this for initialization
@@ -30,6 +41,12 @@ public class MousePlane : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		// screen space to local pos
+		float lx = 1f - Mathf.Clamp01(Input.mousePosition.x / (float)Screen.width);
+		float ly = 1f - Mathf.Clamp01(Input.mousePosition.y / (float)Screen.height);
+		
+		_mousePos.x = (0.5f - lx) * _width;
+		_mousePos.y = 0f;
+		_mousePos.z = (0.5f - ly) * _height;
 	}
 }
