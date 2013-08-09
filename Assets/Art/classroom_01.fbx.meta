@@ -7,10 +7,12 @@ ModelImporter:
     100002: //RootNode
     100004: classroom_01
     100006: Directional Light
+    100008: Texture Group
     400000: Camera
     400002: //RootNode
     400004: classroom_01
     400006: Directional Light
+    400008: Texture Group
     2300000: classroom_01
     2300002: //RootNode
     3300000: classroom_01
