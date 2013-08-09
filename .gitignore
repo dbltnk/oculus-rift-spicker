@@ -3,3 +3,5 @@ Assembly-*.unityproj
 Temp
 *.sln
 Library
+*.userprefs
+*.pidb
