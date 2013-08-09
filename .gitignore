@@ -6,3 +6,4 @@ Library
 *.userprefs
 *.pidb
 Thumbs.db
+build*

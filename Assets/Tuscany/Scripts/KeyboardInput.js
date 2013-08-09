@@ -43,7 +43,7 @@ function Start ()
 	}
 	
 	//turn off grass by default
-	Terrain.activeTerrain.detailObjectDensity = 0.0;
+	//Terrain.activeTerrain.detailObjectDensity = 0.0;
 	CustomGrass.SetActive(false);	
 }	
 
