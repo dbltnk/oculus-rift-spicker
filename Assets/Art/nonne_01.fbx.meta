@@ -1,23 +1,13 @@
 fileFormatVersion: 2
-guid: 14079358446af4fa780077892beadae6
+guid: 1276ee5dc12774758a9983e8d33988a9
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Camera
-    100002: Directional Light
-    100004: //RootNode
-    100006: table_01
-    100008: Texture Group
-    400000: Camera
-    400002: Directional Light
-    400004: //RootNode
-    400006: table_01
-    400008: Texture Group
-    2300000: table_01
-    2300002: //RootNode
-    3300000: table_01
-    3300002: //RootNode
-    4300000: table_01
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: nonne_01
     9500000: //RootNode
   materials:
     importMaterials: 1
