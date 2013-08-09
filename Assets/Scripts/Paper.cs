@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 public class Paper : MonoBehaviour {
 	
+	public static Vector2[] textureOffsets = {
+		new Vector2(0.5f, 0.5f),	// red
+		new Vector2(0f, 0f),		// green
+		new Vector2(0.5f, 0f),		// blue
+		new Vector2(0f, 0.5f),	
+	};
+	
 	public List<GameObject> _answers0;
 	public List<GameObject> _answers1;
 	public List<GameObject> _answers2;
@@ -14,6 +21,7 @@ public class Paper : MonoBehaviour {
 		for(int i = 0; i < l.Count; ++i)
 		{
 			l[i].SetActive(i == r);
+			l[i].renderer.material.mainTextureOffset = textureOffsets[i];
 		}
 	}
 	
