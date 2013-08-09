@@ -12,7 +12,9 @@ ModelImporter:
     400004: //RootNode
     400006: table_01
     2300000: table_01
+    2300002: //RootNode
     3300000: table_01
+    3300002: //RootNode
     4300000: table_01
     9500000: //RootNode
   materials:

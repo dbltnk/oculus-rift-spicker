@@ -12,7 +12,9 @@ ModelImporter:
     400004: classroom_01
     400006: Directional Light
     2300000: classroom_01
+    2300002: //RootNode
     3300000: classroom_01
+    3300002: //RootNode
     4300000: classroom_01
     9500000: //RootNode
   materials:
