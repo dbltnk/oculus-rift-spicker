@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -2.23020029, y: 0, z: 10.0980644}
+  m_LocalPosition: {x: -3.98695612, y: 0, z: 11.0920486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -101,9 +101,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 8
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewAngle: 60
   viewLength: 5
+  moveDestinationReached: 0
   _currentState: 0
   navAgent: {fileID: 0}
   footsteps:
@@ -178,8 +179,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17411db72a2b3be4eacb0b91154052c2, type: 3}
   - {fileID: 8300000, guid: af0b0f9bc1d9bc146ae07c155d42bfd2, type: 3}
   - {fileID: 8300000, guid: f9aeb0de7f159734fb7da866869abfed, type: 3}
-  - {fileID: 8300000, guid: 165e7664c22e50e49bd80a88d02942a7, type: 3}
-  - {fileID: 8300000, guid: ae5a4a9658a9bcd48941f43940e94822, type: 3}
   positions:
   - {fileID: 0}
   - {fileID: 0}

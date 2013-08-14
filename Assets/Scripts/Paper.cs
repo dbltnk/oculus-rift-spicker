@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Paper : MonoBehaviour {
 	
@@ -32,6 +33,33 @@ public class Paper : MonoBehaviour {
 		foreach (var a in _answers5) yield return a;
 	}
 	
+	public List<GameObject> GetRow(int row)
+	{
+		switch(row)
+		{
+			case 0: return _answers0;
+			case 1: return _answers1;
+			case 2: return _answers2;
+			case 3: return _answers3;
+			case 4: return _answers4;
+			case 5: return _answers5;
+			default: return null;
+		}
+	}
+	
+	public IEnumerable<GameObject> EnumRow(int row)
+	{
+		switch(row)
+		{
+			case 0: foreach (var a in _answers0) yield return a; break;
+			case 1: foreach (var a in _answers1) yield return a; break;
+			case 2: foreach (var a in _answers2) yield return a; break;
+			case 3: foreach (var a in _answers3) yield return a; break;
+			case 4: foreach (var a in _answers4) yield return a; break;
+			case 5: foreach (var a in _answers5) yield return a; break;
+			default: break;
+		}
+	}
 	
 	private void EnableOne(List<GameObject> l, int index)
 	{
@@ -57,6 +85,45 @@ public class Paper : MonoBehaviour {
 		}
 		
 		EnableOne(l, answer);
+	}
+	
+	// object, row, index
+	public void VisitAnswers(System.Action<GameObject, int, int> visitor)
+	{
+		for (int row = 0; row < 6; ++row) 
+		{
+			var r = GetRow(row);
+			for (int i = 0; i < r.Count; ++i) 
+			{
+				visitor(r[i], row, i);
+			}
+		}		
+	}
+	
+	public int CountWrongAnswers()
+	{
+		int sum = 0;
+		
+		VisitAnswers((o, row, i) => {
+			bool own = o.activeSelf;
+			bool correct = Answers.correctAnswers[row] == i;
+			if (own != correct) ++sum;
+		});
+		
+		return sum;
+	}
+	
+	public int CountCorrectAnswers()
+	{
+		int sum = 0;
+		
+		VisitAnswers((o, row, i) => {
+			bool own = o.activeSelf;
+			bool correct = Answers.correctAnswers[row] == i;
+			if (own == correct) ++sum;
+		});
+		
+		return sum;
 	}
 	
 	private void PrepareAnswers(List<GameObject> l)

@@ -11,10 +11,16 @@ public class Player : MonoBehaviour {
 	public GameObject _markerCross;
 	public float snapDistance;
 	
+	private Teacher _teacher;
+	
 	public float suspicionFactor;
 	public float suspicionSpeed;
 	public float suspicionDecreaseSpeed;
 	
+	
+	void Awake() {
+		_teacher = GameObject.FindObjectOfType(typeof(Teacher)) as Teacher;
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -46,17 +52,19 @@ public class Player : MonoBehaviour {
 			}
 		}
 		
+		// answer quality
+		Debug.Log(string.Format("correct={0} wrong={1}", _paper.CountCorrectAnswers(), _paper.CountWrongAnswers()));
+		
+		// calculate visibility stuff
 		var r = _viewCamera.ScreenPointToRay(new Vector3(_viewCamera.pixelWidth / 2f, _viewCamera.pixelHeight / 2f, 0f));
 		var isSave = Physics.Raycast(r, float.MaxValue, 1 << LayerMask.NameToLayer("SaveSpot"));
 		
-		Teacher teacher = GameObject.FindObjectOfType(typeof(Teacher)) as Teacher;
-		var f = teacher.CalculateInViewFactor(transform.position);
+		var f = _teacher.CalculateInViewFactor(transform.position);
 		
 		if (isSave) f = 0f;
 		suspicionFactor += f * suspicionSpeed * Time.deltaTime;
 		
 		if (f == 0f) suspicionFactor -= suspicionDecreaseSpeed * Time.deltaTime;
-		
 		
 		suspicionFactor = Mathf.Clamp01(suspicionFactor);
 		//Debug.Log(string.Format("f={0} save={1}", f, isSave));

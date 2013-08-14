@@ -15,7 +15,7 @@ public class Teacher : MonoBehaviour {
 	
 	public Dictionary<State, int> stateWeightMap = new Dictionary<State, int>(){
 		{ State.NOTHING, 1 },
-		{ State.GOTO, 10 },
+		{ State.GOTO, 1 },
 		{ State.SCAN, 1 },
 	};
 	
@@ -119,7 +119,7 @@ public class Teacher : MonoBehaviour {
 	}
 	
 	void PlayRandomSFX(){
-		if (audio.isPlaying) return; 
+		if (audio.isPlaying || _currentState != State.GOTO) return; 
 		else {
 			audio.clip = RandomHelper.pickRandom(footsteps);
 			audio.Play();
