@@ -60306,7 +60306,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2082417550}
   m_Layer: 0
-  m_Name: PrefPositions
+  m_Name: pref_positions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
