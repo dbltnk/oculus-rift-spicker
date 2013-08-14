@@ -4,11 +4,150 @@ ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
+    100002: boy_01
+    100004: jboy
+    100006: 'jboy '
+    100008: 'jboy  '
+    100010: jboy   1
+    100012: jboy   10
+    100014: jboy   11
+    100016: jboy   12
+    100018: jboy   13
+    100020: jboy   14
+    100022: jboy   15
+    100024: jboy   16
+    100026: jboy   17
+    100028: jboy   18
+    100030: jboy   19
+    100032: jboy   2
+    100034: jboy   20
+    100036: jboy   21
+    100038: jboy   22
+    100040: jboy   23
+    100042: jboy   24
+    100044: jboy   25
+    100046: jboy   26
+    100048: jboy   27
+    100050: jboy   28
+    100052: jboy   29
+    100054: jboy   3
+    100056: jboy   30
+    100058: jboy   31
+    100060: jboy   32
+    100062: jboy   33
+    100064: jboy   34
+    100066: jboy   35
+    100068: jboy   36
+    100070: jboy   37
+    100072: jboy   38
+    100074: jboy   39
+    100076: jboy   4
+    100078: jboy   40
+    100080: jboy   41
+    100082: jboy   42
+    100084: jboy   43
+    100086: jboy   44
+    100088: jboy   45
+    100090: jboy   46
+    100092: jboy   47
+    100094: jboy   48
+    100096: jboy   49
+    100098: jboy   5
+    100100: jboy   50
+    100102: jboy   51
+    100104: jboy   52
+    100106: jboy   53
+    100108: jboy   54
+    100110: jboy   55
+    100112: jboy   56
+    100114: jboy   6
+    100116: jboy   7
+    100118: jboy   8
+    100120: jboy   9
+    100122: jboy (x)
+    100124: jboy_attachment_R
+    100126: jboy_eye_L
+    100128: jboy_eye_R
+    100130: Skeleton_Joint
+    100132: 'Skeleton_Joint '
+    100134: 'Skeleton_Joint  '
+    100136: TextureLocators
     400000: //RootNode
+    400002: boy_01
+    400004: jboy
+    400006: 'jboy '
+    400008: 'jboy  '
+    400010: jboy   1
+    400012: jboy   10
+    400014: jboy   11
+    400016: jboy   12
+    400018: jboy   13
+    400020: jboy   14
+    400022: jboy   15
+    400024: jboy   16
+    400026: jboy   17
+    400028: jboy   18
+    400030: jboy   19
+    400032: jboy   2
+    400034: jboy   20
+    400036: jboy   21
+    400038: jboy   22
+    400040: jboy   23
+    400042: jboy   24
+    400044: jboy   25
+    400046: jboy   26
+    400048: jboy   27
+    400050: jboy   28
+    400052: jboy   29
+    400054: jboy   3
+    400056: jboy   30
+    400058: jboy   31
+    400060: jboy   32
+    400062: jboy   33
+    400064: jboy   34
+    400066: jboy   35
+    400068: jboy   36
+    400070: jboy   37
+    400072: jboy   38
+    400074: jboy   39
+    400076: jboy   4
+    400078: jboy   40
+    400080: jboy   41
+    400082: jboy   42
+    400084: jboy   43
+    400086: jboy   44
+    400088: jboy   45
+    400090: jboy   46
+    400092: jboy   47
+    400094: jboy   48
+    400096: jboy   49
+    400098: jboy   5
+    400100: jboy   50
+    400102: jboy   51
+    400104: jboy   52
+    400106: jboy   53
+    400108: jboy   54
+    400110: jboy   55
+    400112: jboy   56
+    400114: jboy   6
+    400116: jboy   7
+    400118: jboy   8
+    400120: jboy   9
+    400122: jboy (x)
+    400124: jboy_attachment_R
+    400126: jboy_eye_L
+    400128: jboy_eye_R
+    400130: Skeleton_Joint
+    400132: 'Skeleton_Joint '
+    400134: 'Skeleton_Joint  '
+    400136: TextureLocators
     2300000: //RootNode
     3300000: //RootNode
     4300000: boy_01
+    7400000: modo_Anim
+    7400002: idle
     9500000: //RootNode
+    13700000: boy_01
   materials:
     importMaterials: 1
     materialName: 0
@@ -21,7 +160,49 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
-    clipAnimations: []
+    clipAnimations:
+    - name: modo_Anim
+      takeName: modo_Anim
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: idle
+      takeName: modo_Anim
+      firstFrame: 1
+      lastFrame: 72
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
