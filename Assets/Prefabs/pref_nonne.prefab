@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a676b7aa125434f89a2f49e4890e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewAngle: 45
+  viewLength: 5
+  _currentState: 0
   navAgent: {fileID: 0}
   footsteps:
   - {fileID: 8300000, guid: d936786d45519384faf07049811f5393, type: 3}

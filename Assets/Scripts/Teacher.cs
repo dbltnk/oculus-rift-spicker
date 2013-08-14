@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(AudioSource))]
 public class Teacher : MonoBehaviour {
+	public float viewAngle;
+	public float viewLength;
+
 	public enum State {
 		NOTHING, GOTO, SCAN,
 	};
@@ -69,6 +72,27 @@ public class Teacher : MonoBehaviour {
 	{
 		var gotoPos = RandomHelper.pickWeightedRandom(positions, (point) => point.weight);
 		navAgent.destination = gotoPos.transform.position;
+	}
+	
+	void OnDrawGizmos() 
+	{
+		var localL = transform.InverseTransformPoint(transform.position + new Vector3(viewLength, 0f, 0f)).magnitude;
+		var h = Vector3.up * 1f;
+		
+		var to = transform.TransformPoint(Vector3.forward * localL);
+		
+		var a = Quaternion.Euler(0f, viewAngle / 2f, 0f) * Vector3.forward * localL;
+		var b = Quaternion.Euler(0f, -viewAngle / 2f, 0f) * Vector3.forward * localL;
+		
+		var toA = transform.TransformPoint(a);
+		var toB = transform.TransformPoint(b);
+		
+		Gizmos.color = Color.red;
+		Gizmos.DrawLine(transform.position + h, to + h);
+		
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawLine(transform.position + h, toA + h);
+		Gizmos.DrawLine(transform.position + h, toB + h);
 	}
 	
 	void PlayRandomSFX(){
