@@ -56,6 +56,8 @@ public class Answers : MonoBehaviour {
 			}
         }
 		
+		RandomHelper.shuffle(l);
+		
 	}
 	
 	private void GenerateCorrectAnswers() {
