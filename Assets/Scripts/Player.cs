@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	public MousePlane _mousePlane;
 	public GameObject _markerCross;
 	public float snapDistance;
+	public GameObject _exit;
 	
 	public List<GameObject> _hearts;
 	
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour {
 		_markerCross.SetActive(nearestCross != null);
 		if (nearestCross != null)
 		{
+			_markerCross.SetActive(true);
 			_markerCross.transform.position = nearestCross.transform.position;
 			_markerCross.transform.rotation = nearestCross.transform.rotation;
 			_markerCross.transform.localScale = nearestCross.transform.localScale;
@@ -66,9 +68,13 @@ public class Player : MonoBehaviour {
 				_paper.Toggle(nearestCross);
 			}
 		}
+		else
+		{
+			_markerCross.SetActive(false);
+		}
 		
 		// answer quality
-		Debug.Log(string.Format("correct={0} wrong={1}", _paper.CountCorrectAnswers(), _paper.CountWrongAnswers()));
+		//Debug.Log(string.Format("correct={0} wrong={1}", _paper.CountCorrectAnswers(), _paper.CountWrongAnswers()));
 		
 		// calculate visibility stuff
 		var r = _viewCamera.ScreenPointToRay(new Vector3(_viewCamera.pixelWidth / 2f, _viewCamera.pixelHeight / 2f, 0f));
@@ -95,6 +101,21 @@ public class Player : MonoBehaviour {
 		if (Hearts == 0) {
 			RedCameraOverlay.redAlpha = 1f;
 			RedCameraOverlay.saveAlpha = 0f;			
+		}
+		
+		// exit clicked?
+		if (Input.GetMouseButtonDown(0) && IsHandInside(_exit))
+		{
+			Application.LoadLevel("classroom");	
+		}
+	}
+	
+	private bool IsHandInside(GameObject o)
+	{
+		if (o.collider == null) return false;
+		else {
+			var near = o.collider.ClosestPointOnBounds(_hand.transform.position);
+			return Vector3.Distance(near, _hand.transform.position) <= 0f;			
 		}
 	}
 }
