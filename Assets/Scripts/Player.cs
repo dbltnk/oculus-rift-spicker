@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Player : MonoBehaviour {
 	
@@ -11,12 +13,25 @@ public class Player : MonoBehaviour {
 	public GameObject _markerCross;
 	public float snapDistance;
 	
+	public List<GameObject> _hearts;
+	
 	private Teacher _teacher;
 	
 	public float suspicionFactor;
 	public float suspicionSpeed;
 	public float suspicionDecreaseSpeed;
 	
+	public int Hearts {
+		get {
+			return _hearts.Where((o) => o.activeSelf).Count();
+		}
+	}
+	
+	public void LoseHeart()
+	{
+		if (Hearts == 0) return;
+		_hearts[Hearts - 1].SetActive(false);
+	}
 	
 	void Awake() {
 		_teacher = GameObject.FindObjectOfType(typeof(Teacher)) as Teacher;
@@ -69,7 +84,17 @@ public class Player : MonoBehaviour {
 		suspicionFactor = Mathf.Clamp01(suspicionFactor);
 		//Debug.Log(string.Format("f={0} save={1}", f, isSave));
 		
+		if (suspicionFactor >= 1f) {
+			LoseHeart();
+			suspicionFactor = 0f;
+		}
+		
 		RedCameraOverlay.redAlpha = MathHelper.mapIntoRange(suspicionFactor, 0f, 1f, 0f, 0.75f);
 		RedCameraOverlay.saveAlpha = isSave ? 0.5f : 0f;
+		
+		if (Hearts == 0) {
+			RedCameraOverlay.redAlpha = 1f;
+			RedCameraOverlay.saveAlpha = 0f;			
+		}
 	}
 }
