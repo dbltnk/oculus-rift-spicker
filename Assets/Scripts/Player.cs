@@ -3,11 +3,16 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	
+	public Student _student;
 	public Paper _paper;
 	public Hand _hand;
 	public MousePlane _mousePlane;
 	public GameObject _markerCross;
 	public float snapDistance;
+	
+	public float suspicionFactor;
+	public float suspicionSpeed;
+	public float suspicionDecreaseSpeed;
 	
 	
 	// Use this for initialization
@@ -33,5 +38,16 @@ public class Player : MonoBehaviour {
 				_paper.Toggle(nearestCross);
 			}
 		}
+		
+		Teacher teacher = GameObject.FindObjectOfType(typeof(Teacher)) as Teacher;
+		var f = teacher.CalculateInViewFactor(transform.position);
+		
+		suspicionFactor += f * suspicionSpeed * Time.deltaTime;
+		if (f == 0f) suspicionFactor -= suspicionDecreaseSpeed * Time.deltaTime;
+		
+		suspicionFactor = Mathf.Clamp01(suspicionFactor);
+		Debug.Log(f);
+		
+		RedCameraOverlay.alpha = MathHelper.mapIntoRange(suspicionFactor, 0f, 1f, 0f, 0.75f);
 	}
 }

@@ -13,7 +13,7 @@ public class Teacher : MonoBehaviour {
 	
 	public Dictionary<State, int> stateWeightMap = new Dictionary<State, int>(){
 		{ State.NOTHING, 1 },
-		{ State.GOTO, 1 },
+		{ State.GOTO, 10 },
 		{ State.SCAN, 1 },
 	};
 	
@@ -23,9 +23,18 @@ public class Teacher : MonoBehaviour {
 	public List<AudioClip> footsteps;
 	
 	public List<WatchPoint> positions;
+	public List<WatchPoint> lookAtPositions;
 	
 	void Awake() {
 		navAgent = GetComponent<NavMeshAgent>();
+	}
+	
+	void LookAt()
+	{
+		var lookAtPos = RandomHelper.pickWeightedRandom(lookAtPositions, (point) => point.weight);
+		var rotateTime = 1f;
+		transform.localEularAnglesTo(rotateTime, Quaternion.LookRotation(lookAtPos.transform.position - transform.position).eulerAngles, false);
+		Invoke("DoSomething", rotateTime);
 	}
 	
 	void DoSomething()
@@ -64,7 +73,7 @@ public class Teacher : MonoBehaviour {
 		// end reached?
 		if (_currentState == State.GOTO && Vector3.Distance(transform.position, navAgent.destination) < 0.01f)
 		{
-			DoSomething();
+			LookAt();
 		}
 	}
 	
@@ -93,6 +102,15 @@ public class Teacher : MonoBehaviour {
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawLine(transform.position + h, toA + h);
 		Gizmos.DrawLine(transform.position + h, toB + h);
+	}
+	
+	public float CalculateInViewFactor(Vector3 p)
+	{
+		var localP = transform.InverseTransformPoint(p);
+		var angle = Quaternion.Angle(Quaternion.LookRotation(localP), Quaternion.LookRotation(Vector3.forward));
+		var af = 1f - Mathf.Clamp01(angle / viewAngle);
+		var lf = Mathf.Clamp01(localP.magnitude / viewLength);
+		return Mathf.Clamp01(af * lf);
 	}
 	
 	void PlayRandomSFX(){
