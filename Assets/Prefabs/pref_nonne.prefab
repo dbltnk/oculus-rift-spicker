@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
+  - 195: {fileID: 19500000}
   m_Layer: 0
   m_Name: pref_nonne
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a676b7aa125434f89a2f49e4890e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navAgent: {fileID: 0}
   footsteps:
   - {fileID: 8300000, guid: d936786d45519384faf07049811f5393, type: 3}
   - {fileID: 8300000, guid: 8f5ee7388feabb64fb907501a1626534, type: 3}
@@ -175,6 +177,36 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9aeb0de7f159734fb7da866869abfed, type: 3}
   - {fileID: 8300000, guid: 165e7664c22e50e49bd80a88d02942a7, type: 3}
   - {fileID: 8300000, guid: ae5a4a9658a9bcd48941f43940e94822, type: 3}
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!195 &19500000
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Radius: .150000006
+  m_Speed: .5
+  m_Acceleration: 1
+  avoidancePriority: 50
+  m_AngularSpeed: 240
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

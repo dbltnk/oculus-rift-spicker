@@ -17,6 +17,12 @@ public static class RandomHelper {
 		return (float)r.NextDouble();	
 	}
 	
+	// [min-max[
+	public static float next(float min, float max)
+	{
+		return min + (max - min) * next();
+	}
+	
 	/// <summary>
 	/// Pick randomly from weighted elements
 	/// </summary>
