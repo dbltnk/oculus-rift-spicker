@@ -163,7 +163,7 @@ public class AbstractGoTweenCollection : AbstractGoTween
 			// only update flows that have a Tween and whose startTime has passed
 			if( flow.tween != null && flow.startTime < convertedElapsedTime )
 			{
-				// TODO: further narrow down who gets an update for efficiency
+				// DOTO: further narrow down who gets an update for efficiency
 				var tweenConvertedElapsed = convertedElapsedTime - flow.startTime;
 				flow.tween.goTo( tweenConvertedElapsed );
 			}

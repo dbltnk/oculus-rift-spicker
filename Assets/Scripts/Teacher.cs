@@ -8,7 +8,7 @@ public class Teacher : MonoBehaviour {
 	public float viewLength;
 
 	public enum State {
-		NOTHING, GOTO, SCAN, 
+		NOTHING, GOTO, SCAN, SUSPICIOUS,
 	};
 	
 	public bool moveDestinationReached = false;
@@ -111,6 +111,8 @@ public class Teacher : MonoBehaviour {
 	
 	public float CalculateInViewFactor(Vector3 p)
 	{
+		if (_currentState == State.NOTHING) return 0f;
+		
 		var localP = transform.InverseTransformPoint(p);
 		var angle = Quaternion.Angle(Quaternion.LookRotation(localP), Quaternion.LookRotation(Vector3.forward));
 		var af = 1f - Mathf.Clamp01(angle / viewAngle);
@@ -118,11 +120,21 @@ public class Teacher : MonoBehaviour {
 		return Mathf.Clamp01(af * lf);
 	}
 	
-	void PlayRandomSFX(){
+	void PlayRandomSFX()
+	{
 		if (audio.isPlaying || _currentState != State.GOTO) return; 
-		else {
+		else 
+		{
 			audio.clip = RandomHelper.pickRandom(footsteps);
 			audio.Play();
-			}
 		}
+	}
+	
+	// ends all current states
+	public void BecomeSuspicious()
+	{
+		if (_currentState == State.SUSPICIOUS) return;
+		
+		// TODO 
+	}
 }

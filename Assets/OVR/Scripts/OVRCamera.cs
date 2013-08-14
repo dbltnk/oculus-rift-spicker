@@ -213,7 +213,7 @@ public class OVRCamera : OVRComponent
 			// If desired, update parent transform y rotation here
 			// This is useful if we want to track the current location of
 			// of the head.
-			// TODO: Future support for x and z, and possibly change to a quaternion
+			// DOTO: Future support for x and z, and possibly change to a quaternion
 			// NOTE: This calculation is one frame behind 
 			if(CameraController.TrackerRotatesY == true)
 			{
