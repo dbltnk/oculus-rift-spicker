@@ -20077,6 +20077,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .995818436
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: _isImportant
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_TagString
+      value: Important
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
   m_RootGameObject: {fileID: 1144451904}
@@ -27891,7 +27899,7 @@ GameObject:
   - 114: {fileID: 977821862}
   m_Layer: 0
   m_Name: pref_blatt
-  m_TagString: Untagged
+  m_TagString: Important
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30811,7 +30819,7 @@ GameObject:
   - 114: {fileID: 1084451782}
   m_Layer: 0
   m_Name: pref_blatt
-  m_TagString: Untagged
+  m_TagString: Important
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32825,7 +32833,7 @@ GameObject:
   - 114: {fileID: 1144451906}
   m_Layer: 0
   m_Name: pref_blatt
-  m_TagString: Untagged
+  m_TagString: Important
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40353,6 +40361,10 @@ Prefab:
     - target: {fileID: 400002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
       propertyPath: m_LocalRotation.w
       value: .995818436
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_TagString
+      value: Important
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
@@ -56653,6 +56665,10 @@ Prefab:
     - target: {fileID: 400002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
       propertyPath: m_LocalRotation.w
       value: .995818436
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_TagString
+      value: Important
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}

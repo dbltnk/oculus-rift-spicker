@@ -86,16 +86,29 @@ public static class RandomHelper {
 	/// </summary>
 	/// <typeparam name="T">Array element type.</typeparam>
 	/// <param name="array">Array to shuffle.</param>
-	public static void shuffle<T> (T[] array, Random random)
+	public static void shuffle<T> (T[] array)
 	{
 		for (int i = array.Length; i > 1; i--) {
 			// Pick random element to swap.
-			int j = random.Next (i);
+			int j = r.Next (i);
 			// 0 <= j <= i-1
 			// Swap.
 			T tmp = array[j];
 			array[j] = array[i - 1];
 			array[i - 1] = tmp;
+		}
+	}
+	
+	public static void shuffle<T> (List<T> list)
+	{
+		for (int i = list.Count; i > 1; i--) {
+			// Pick random element to swap.
+			int j = r.Next (i);
+			// 0 <= j <= i-1
+			// Swap.
+			T tmp = list[j];
+			list[j] = list[i - 1];
+			list[i - 1] = tmp;
 		}
 	}
 }

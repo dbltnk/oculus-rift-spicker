@@ -18,7 +18,8 @@ public class Answers : MonoBehaviour {
 	
 	private void GenerateAnswers(List<int> l, int correctAnswer) {
 		
-		int numberOfVisiblePapers = 8;
+		
+		int numberOfVisiblePapers = CountImportantPapers();
 		int numberOfCorrectAnswersNeeded = (int) (Mathf.Floor(numberOfVisiblePapers * percentageCorrect));
 		
 		for (int i = 1; i <= numberOfCorrectAnswersNeeded; i++)
@@ -56,6 +57,8 @@ public class Answers : MonoBehaviour {
 			}
         }
 		
+		RandomHelper.shuffle(l);
+		
 	}
 	
 	private void GenerateCorrectAnswers() {
@@ -65,6 +68,17 @@ public class Answers : MonoBehaviour {
 	        correctAnswers.Add(RandomHelper.next(0,2));
 	    }		
 	}
+	
+	
+	private int CountImportantPapers() {
+		GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Important");
+		return gos.Length;
+	}	
+	
+	
+
+	
 	
 	// Use this for initialization
 	void Start () {
