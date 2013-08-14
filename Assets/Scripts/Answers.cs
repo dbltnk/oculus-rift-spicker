@@ -9,12 +9,19 @@ public class Answers : MonoBehaviour {
 	
 	public static float percentageCorrect = 0.75f;
 	
-	public List<int> _answers0;
-	public List<int> _answers1;
-	public List<int> _answers2;
-	public List<int> _answers3;
-	public List<int> _answers4;
-	public List<int> _answers5;
+	public static List<int> _answers0;
+	public static List<int> _answers1;
+	public static List<int> _answers2;
+	public static List<int> _answers3;
+	public static List<int> _answers4;
+	public static List<int> _answers5;
+	
+	public static int PopFromAnswers(List<int> l)
+	{
+		int r = l[0];
+		l.RemoveAt(0);
+		return r;
+	}
 	
 	private void GenerateAnswers(List<int> l, int correctAnswer) {
 		
@@ -76,12 +83,7 @@ public class Answers : MonoBehaviour {
 		return gos.Length;
 	}	
 	
-	
-
-	
-	
-	// Use this for initialization
-	void Start () {
+	void Awake () {
 			GenerateCorrectAnswers();
 		
 			GenerateAnswers(_answers0, correctAnswers[0]);
@@ -92,7 +94,6 @@ public class Answers : MonoBehaviour {
 			GenerateAnswers(_answers5, correctAnswers[5]);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}

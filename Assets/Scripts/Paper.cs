@@ -4,10 +4,6 @@ using System.Collections.Generic;
 
 public class Paper : MonoBehaviour {
 	
-	public static int[] correctAnswers = {
-		0, 1, 1, 2, 0, 2,
-	};
-	
 	public static float percentageCorrect = 0.75f;
 	
 	public static Vector2[] textureOffsets = {
@@ -36,6 +32,16 @@ public class Paper : MonoBehaviour {
 		foreach (var a in _answers5) yield return a;
 	}
 	
+	
+	private void EnableOne(List<GameObject> l, int index)
+	{
+		// set
+		for(int i = 0; i < l.Count; ++i)
+		{
+			l[i].SetActive(i == index);
+		}
+	}
+	
 	private void EnableOneRandom(List<GameObject> l, int correctAnswer)
 	{
 		int answer = correctAnswer;
@@ -50,11 +56,7 @@ public class Paper : MonoBehaviour {
 			}
 		}
 		
-		// set
-		for(int i = 0; i < l.Count; ++i)
-		{
-			l[i].SetActive(i == answer);
-		}
+		EnableOne(l, answer);
 	}
 	
 	private void PrepareAnswers(List<GameObject> l)
@@ -78,13 +80,25 @@ public class Paper : MonoBehaviour {
 			
 		if (_isPrefilled)
 		{
-			EnableOneRandom(_answers0, correctAnswers[0]);
-			EnableOneRandom(_answers1, correctAnswers[1]);
-			EnableOneRandom(_answers2, correctAnswers[2]);
-			EnableOneRandom(_answers3, correctAnswers[3]);
-			EnableOneRandom(_answers4, correctAnswers[4]);
-			EnableOneRandom(_answers5, correctAnswers[5]);
+			if (this.tag == "Important") {
+				EnableOne(_answers0, Answers.PopFromAnswers(Answers._answers0));
+				EnableOne(_answers1, Answers.PopFromAnswers(Answers._answers1));
+				EnableOne(_answers2, Answers.PopFromAnswers(Answers._answers2));
+				EnableOne(_answers3, Answers.PopFromAnswers(Answers._answers3));
+				EnableOne(_answers4, Answers.PopFromAnswers(Answers._answers4));
+				EnableOne(_answers5, Answers.PopFromAnswers(Answers._answers5));
+			}
+			else {
+				EnableOneRandom(_answers0, Answers.correctAnswers[0]);
+				EnableOneRandom(_answers1, Answers.correctAnswers[1]);
+				EnableOneRandom(_answers2, Answers.correctAnswers[2]);
+				EnableOneRandom(_answers3, Answers.correctAnswers[3]);
+				EnableOneRandom(_answers4, Answers.correctAnswers[4]);
+				EnableOneRandom(_answers5, Answers.correctAnswers[5]);
+			}
 		}
+		
+		
 	}
 	
 	// can return null
