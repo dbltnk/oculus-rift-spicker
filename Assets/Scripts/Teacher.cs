@@ -8,8 +8,10 @@ public class Teacher : MonoBehaviour {
 	public float viewLength;
 
 	public enum State {
-		NOTHING, GOTO, SCAN,
+		NOTHING, GOTO, SCAN, 
 	};
+	
+	public bool moveDestinationReached = false;
 	
 	public Dictionary<State, int> stateWeightMap = new Dictionary<State, int>(){
 		{ State.NOTHING, 1 },
@@ -71,14 +73,17 @@ public class Teacher : MonoBehaviour {
 		PlayRandomSFX();
 				
 		// end reached?
-		if (_currentState == State.GOTO && Vector3.Distance(transform.position, navAgent.destination) < 0.01f)
+		if (_currentState == State.GOTO && moveDestinationReached == false && 
+			Vector3.Distance(transform.position, navAgent.destination) < 0.01f)
 		{
+			moveDestinationReached = true;
 			LookAt();
 		}
 	}
 	
 	void GotoSomewhere()
 	{
+		moveDestinationReached = false;
 		var gotoPos = RandomHelper.pickWeightedRandom(positions, (point) => point.weight);
 		navAgent.destination = gotoPos.transform.position;
 	}
