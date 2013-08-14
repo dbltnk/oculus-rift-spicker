@@ -23,6 +23,8 @@ public class Paper : MonoBehaviour {
 	
 	public bool _isPrefilled;
 	
+	public List<int> _myAnswers = new List<int>();
+	
 	public IEnumerable<GameObject> EnumAllAnswers()
 	{
 		foreach (var a in _answers0) yield return a;
@@ -70,7 +72,7 @@ public class Paper : MonoBehaviour {
 		}
 	}
 	
-	private void EnableOneRandom(List<GameObject> l, int correctAnswer)
+	private int PickRandom(int correctAnswer)
 	{
 		int answer = correctAnswer;
 		
@@ -80,11 +82,16 @@ public class Paper : MonoBehaviour {
 			// pick wrong random
 			while (answer == correctAnswer)
 			{
-				answer = RandomHelper.next(0, l.Count-1);
+				answer = RandomHelper.next(0, 3);
 			}
 		}
 		
-		EnableOne(l, answer);
+		return answer;
+	}
+	
+	private void EnableOneRandom(List<GameObject> l, int correctAnswer)
+	{
+		EnableOne(l, PickRandom(correctAnswer));
 	}
 	
 	// object, row, index
@@ -145,27 +152,49 @@ public class Paper : MonoBehaviour {
 		PrepareAnswers(_answers4);
 		PrepareAnswers(_answers5);
 			
+		// collect my answers		
+		if (this.tag == "Important") 
+		{
+			_myAnswers.Add(Answers.PopFromAnswers(Answers._answers0));
+			_myAnswers.Add(Answers.PopFromAnswers(Answers._answers1));
+			_myAnswers.Add(Answers.PopFromAnswers(Answers._answers2));
+			_myAnswers.Add(Answers.PopFromAnswers(Answers._answers3));
+			_myAnswers.Add(Answers.PopFromAnswers(Answers._answers4));
+			_myAnswers.Add(Answers.PopFromAnswers(Answers._answers5));
+		} else {
+			_myAnswers.Add(PickRandom(Answers.correctAnswers[0]));
+			_myAnswers.Add(PickRandom(Answers.correctAnswers[1]));
+			_myAnswers.Add(PickRandom(Answers.correctAnswers[2]));
+			_myAnswers.Add(PickRandom(Answers.correctAnswers[3]));
+			_myAnswers.Add(PickRandom(Answers.correctAnswers[4]));
+			_myAnswers.Add(PickRandom(Answers.correctAnswers[5]));
+		}
+		
 		if (_isPrefilled)
 		{
-			if (this.tag == "Important") {
-				EnableOne(_answers0, Answers.PopFromAnswers(Answers._answers0));
-				EnableOne(_answers1, Answers.PopFromAnswers(Answers._answers1));
-				EnableOne(_answers2, Answers.PopFromAnswers(Answers._answers2));
-				EnableOne(_answers3, Answers.PopFromAnswers(Answers._answers3));
-				EnableOne(_answers4, Answers.PopFromAnswers(Answers._answers4));
-				EnableOne(_answers5, Answers.PopFromAnswers(Answers._answers5));
-			}
-			else {
-				EnableOneRandom(_answers0, Answers.correctAnswers[0]);
-				EnableOneRandom(_answers1, Answers.correctAnswers[1]);
-				EnableOneRandom(_answers2, Answers.correctAnswers[2]);
-				EnableOneRandom(_answers3, Answers.correctAnswers[3]);
-				EnableOneRandom(_answers4, Answers.correctAnswers[4]);
-				EnableOneRandom(_answers5, Answers.correctAnswers[5]);
+			StartCoroutine(coReveal());
+		}
+	}
+	
+	public IEnumerator coReveal()
+	{
+		List<int> rows = new List<int>();
+		for (int i = 0; i < 3; ++i)
+		{
+			if (RandomHelper.next(0,1) == 0) {
+				rows.Add(i*2 + 0);
+				rows.Add(i*2 + 1);
+			} else {
+				rows.Add(i*2 + 1);
+				rows.Add(i*2 + 0);
 			}
 		}
 		
-		
+		foreach(var i in rows)
+		{
+			EnableOne(GetRow(i), _myAnswers[i]);
+			yield return new WaitForSeconds(RandomHelper.next(20f, 30f));
+		}
 	}
 	
 	// can return null
