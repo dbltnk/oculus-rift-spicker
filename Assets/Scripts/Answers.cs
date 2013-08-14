@@ -9,12 +9,12 @@ public class Answers : MonoBehaviour {
 	
 	public static float percentageCorrect = 0.75f;
 	
-	public static List<int> _answers0;
-	public static List<int> _answers1;
-	public static List<int> _answers2;
-	public static List<int> _answers3;
-	public static List<int> _answers4;
-	public static List<int> _answers5;
+	public static List<int> _answers0 = new List<int>();
+	public static List<int> _answers1 = new List<int>();
+	public static List<int> _answers2 = new List<int>();
+	public static List<int> _answers3 = new List<int>();
+	public static List<int> _answers4 = new List<int>();
+	public static List<int> _answers5 = new List<int>();
 	
 	public static int PopFromAnswers(List<int> l)
 	{

@@ -46,7 +46,7 @@ public class Player : MonoBehaviour {
 		if (f == 0f) suspicionFactor -= suspicionDecreaseSpeed * Time.deltaTime;
 		
 		suspicionFactor = Mathf.Clamp01(suspicionFactor);
-		Debug.Log(f);
+		//Debug.Log(f);
 		
 		RedCameraOverlay.alpha = MathHelper.mapIntoRange(suspicionFactor, 0f, 1f, 0f, 0.75f);
 	}
