@@ -8857,7 +8857,7 @@ GameObject:
   - 33: {fileID: 334622706}
   - 64: {fileID: 334622705}
   - 23: {fileID: 334622704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13045,7 +13045,7 @@ GameObject:
   - 33: {fileID: 456796749}
   - 64: {fileID: 456796748}
   - 23: {fileID: 456796747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13435,7 +13435,7 @@ GameObject:
   - 33: {fileID: 468085698}
   - 64: {fileID: 468085697}
   - 23: {fileID: 468085696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15692,7 +15692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &530366911
 Transform:
   m_ObjectHideFlags: 0
@@ -15704,6 +15704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2111546890}
+  - {fileID: 1946851935}
   m_Father: {fileID: 0}
 --- !u!20 &530366912
 Camera:
@@ -16073,7 +16074,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 538197399}
   - 114: {fileID: 538197400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pref_blatt_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16368,7 +16369,7 @@ GameObject:
   - 33: {fileID: 540436657}
   - 64: {fileID: 540436656}
   - 23: {fileID: 540436655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21156,6 +21157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d7da0a1eaf34f629a27a884d388d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _viewCamera: {fileID: 2056954727}
   _student: {fileID: 1631296705}
   _paper: {fileID: 538197400}
   _hand: {fileID: 144987538}
@@ -24848,7 +24850,7 @@ GameObject:
   - 33: {fileID: 862216927}
   - 64: {fileID: 862216926}
   - 23: {fileID: 862216925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27710,7 +27712,7 @@ GameObject:
   - 33: {fileID: 972151018}
   - 64: {fileID: 972151017}
   - 23: {fileID: 972151016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29375,7 +29377,7 @@ GameObject:
   - 33: {fileID: 1018102431}
   - 64: {fileID: 1018102430}
   - 23: {fileID: 1018102429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29515,7 +29517,7 @@ GameObject:
   - 33: {fileID: 1018567036}
   - 64: {fileID: 1018567035}
   - 23: {fileID: 1018567034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31946,7 +31948,7 @@ GameObject:
   - 33: {fileID: 1127180849}
   - 64: {fileID: 1127180848}
   - 23: {fileID: 1127180847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32401,6 +32403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewAngle: 60
   viewLength: 5
+  moveDestinationReached: 0
   _currentState: 0
   navAgent: {fileID: 0}
   footsteps:
@@ -33609,7 +33612,7 @@ GameObject:
   - 33: {fileID: 1158415771}
   - 64: {fileID: 1158415770}
   - 23: {fileID: 1158415769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34237,7 +34240,7 @@ GameObject:
   - 33: {fileID: 1172808216}
   - 64: {fileID: 1172808215}
   - 23: {fileID: 1172808214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35051,7 +35054,7 @@ GameObject:
   - 33: {fileID: 1197551466}
   - 64: {fileID: 1197551465}
   - 23: {fileID: 1197551464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36670,7 +36673,7 @@ GameObject:
   - 33: {fileID: 1231783891}
   - 64: {fileID: 1231783890}
   - 23: {fileID: 1231783889}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40235,7 +40238,7 @@ GameObject:
   - 33: {fileID: 1377997118}
   - 64: {fileID: 1377997117}
   - 23: {fileID: 1377997116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40305,7 +40308,7 @@ GameObject:
   - 33: {fileID: 1378335827}
   - 64: {fileID: 1378335826}
   - 23: {fileID: 1378335825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40427,6 +40430,10 @@ Prefab:
       propertyPath: suspicionDecreaseSpeed
       value: .100000001
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 34bedbffc615245fe90ee4e8e0df095e, type: 2}
+      propertyPath: _viewCamera
+      value: 
+      objectReference: {fileID: 2056954727}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34bedbffc615245fe90ee4e8e0df095e, type: 2}
   m_RootGameObject: {fileID: 724745396}
@@ -45502,7 +45509,7 @@ GameObject:
   - 33: {fileID: 1547952811}
   - 64: {fileID: 1547952810}
   - 23: {fileID: 1547952809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46342,7 +46349,7 @@ GameObject:
   - 33: {fileID: 1569242553}
   - 64: {fileID: 1569242552}
   - 23: {fileID: 1569242551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49205,7 +49212,7 @@ GameObject:
   - 33: {fileID: 1662391052}
   - 64: {fileID: 1662391051}
   - 23: {fileID: 1662391050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50480,7 +50487,7 @@ GameObject:
   - 33: {fileID: 1729873316}
   - 64: {fileID: 1729873315}
   - 23: {fileID: 1729873314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cross51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51258,6 +51265,86 @@ Prefab:
     - target: {fileID: 100002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
       propertyPath: m_Name
       value: pref_blatt_player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdb1e8691821f46abb47aec31b4863b2, type: 2}
@@ -56428,6 +56515,73 @@ Prefab:
   m_RootGameObject: {fileID: 1181186093}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1946851934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1946851935}
+  - 33: {fileID: 1946851938}
+  - 64: {fileID: 1946851937}
+  - 23: {fileID: 1946851936}
+  m_Layer: 0
+  m_Name: SavePlane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1946851935
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946851934}
+  m_LocalRotation: {x: -.707105815, y: 0, z: 0, w: .707107842}
+  m_LocalPosition: {x: 0, y: .833713531, z: 1}
+  m_LocalScale: {x: .54412806, y: .030752955, z: .0362157635}
+  m_Children: []
+  m_Father: {fileID: 530366911}
+--- !u!23 &1946851936
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946851934}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: e02dfaed4e2124ee2a090cd78fca6916, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!64 &1946851937
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946851934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &1946851938
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946851934}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1947285338
 GameObject:
   m_ObjectHideFlags: 0
@@ -62212,7 +62366,7 @@ GameObject:
   - 64: {fileID: 2111546888}
   - 23: {fileID: 2111546887}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: RedPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
